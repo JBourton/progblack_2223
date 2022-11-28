@@ -1,0 +1,23 @@
+{
+  "name": "progblack_2223",
+  "version": "1.0.0",
+  "description": "Pasta pasta pasta",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JBourton/progblack_2223.git"
+  },
+  "keywords": [
+    "Joshua",
+    "Bourton"
+  ],
+  "author": "Joshua Bourton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JBourton/progblack_2223/issues"
+  },
+  "homepage": "https://github.com/JBourton/progblack_2223#readme"
+}

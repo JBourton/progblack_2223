@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
-app.use(express.static('client'));
+const path = require('path');
+const hostname = '127.0.0.1';
+const port = 8090;
+app.use(express.static(path.join(__dirname, 'client')));
 
 const recipes =
 {
@@ -8,10 +11,18 @@ const recipes =
 "bolognese" : "Meaty tomato good with spaghetti"
 }
 
-app.get('/recipes', function(req, resp){
-    const recipe = req.query.recipe;
+app.get('/recipe/:recipe', function(req, resp){
+    const recipe = req.params.recipe;
     let instructions = recipes[recipe];
-    resp.send(`<h1>This is a recipe for ${recipe}</h1><p>${instructions}</p>`)
+    resp.send(instructions);
 
 })
-app.listen(8090);
+
+app.get('/recipes', function(req, resp){
+    let recipeKeys = Object.keys(recipes);
+    resp.send(recipeKeys);
+})
+
+app.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/ -- yippee!`);
+  });
